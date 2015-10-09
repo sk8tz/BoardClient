@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SEIService.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SEIService.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/AdMaster.Common" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfIndicatorsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndicatorsInfo" nillable="true" type="tns:IndicatorsInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndicatorsInfo" nillable="true" type="tns:ArrayOfIndicatorsInfo" />
+  <xs:complexType name="IndicatorsInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/AdMaster.Common" base="q1:ReportEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Condition" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndicatorName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsMultiple" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MethodID" type="xs:long" />
+          <xs:element minOccurs="0" name="Num" type="xs:int" />
+          <xs:element minOccurs="0" name="OrderID" type="xs:long" />
+          <xs:element minOccurs="0" name="RID" type="xs:long" />
+          <xs:element minOccurs="0" name="TypeID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IndicatorsInfo" nillable="true" type="tns:IndicatorsInfo" />
+  <xs:complexType name="ArrayOfParamsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParamsInfo" nillable="true" type="tns:ParamsInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParamsInfo" nillable="true" type="tns:ArrayOfParamsInfo" />
+  <xs:complexType name="ParamsInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/AdMaster.Common" base="q2:ReportEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Condition" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IID" type="xs:long" />
+          <xs:element minOccurs="0" name="ParamBinding" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParamName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ParamsInfo" nillable="true" type="tns:ParamsInfo" />
+  <xs:complexType name="ArrayOfParamsConfigInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParamsConfigInfo" nillable="true" type="tns:ParamsConfigInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParamsConfigInfo" nillable="true" type="tns:ArrayOfParamsConfigInfo" />
+  <xs:complexType name="ParamsConfigInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/AdMaster.Common" base="q3:ReportEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IID" type="xs:long" />
+          <xs:element minOccurs="0" name="ParamBinding" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParamName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RID" type="xs:long" />
+          <xs:element minOccurs="0" name="SID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ParamsConfigInfo" nillable="true" type="tns:ParamsConfigInfo" />
+  <xs:complexType name="TempInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/AdMaster.Common" base="q4:ReportEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DetailType" type="tns:E_DetailType" />
+          <xs:element minOccurs="0" name="MapID" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="SortID" type="xs:long" />
+          <xs:element minOccurs="0" name="TemplName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TemplTableName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TempInfo" nillable="true" type="tns:TempInfo" />
+  <xs:simpleType name="E_DetailType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MainTable" />
+      <xs:enumeration value="RowTable" />
+      <xs:enumeration value="ColumnTable" />
+      <xs:enumeration value="CrossTable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E_DetailType" nillable="true" type="tns:E_DetailType" />
+  <xs:complexType name="ArrayOfFieldInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FieldInfo" nillable="true" type="tns:FieldInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFieldInfo" nillable="true" type="tns:ArrayOfFieldInfo" />
+  <xs:complexType name="FieldInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/AdMaster.Common" base="q5:ReportEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataType" nillable="true" type="tns:DataType" />
+          <xs:element minOccurs="0" name="DataTypeID" type="xs:long" />
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FieldTableName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsUnique" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TempID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FieldInfo" nillable="true" type="tns:FieldInfo" />
+  <xs:complexType name="DataType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/AdMaster.Common" base="q6:ReportEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsDefault" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MatchWords" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OriginType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParamLen" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ParamXLen" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TypeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataType" nillable="true" type="tns:DataType" />
+  <xs:complexType name="SocialRules">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/AdMaster.Common" base="q7:ReportEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Algorithm" type="xs:long" />
+          <xs:element minOccurs="0" name="BroadcastTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatesSection" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirsTimeThisSeason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Installments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrganizationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrganizationValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProgrameName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TeamName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TeamValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ThemesName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ThemesValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SocialRules" nillable="true" type="tns:SocialRules" />
+  <xs:complexType name="SpecimenInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/AdMaster.Common" base="q8:ReportEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BindingRules" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SpecimenId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SpecimenInfo" nillable="true" type="tns:SpecimenInfo" />
+  <xs:complexType name="ArrayOfProgramInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProgramInfo" nillable="true" type="tns:ProgramInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProgramInfo" nillable="true" type="tns:ArrayOfProgramInfo" />
+  <xs:complexType name="ProgramInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/AdMaster.Common" base="q9:ReportEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BroadcastDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BroadcastDate2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Period" type="xs:int" />
+          <xs:element minOccurs="0" name="ProgramName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProgramInfo" nillable="true" type="tns:ProgramInfo" />
+  <xs:simpleType name="E_TaStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ready">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Calculating">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Error">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E_TaStatus" nillable="true" type="tns:E_TaStatus" />
+</xs:schema>

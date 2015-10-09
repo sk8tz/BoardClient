@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AdMaster.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AdMaster.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GMF.Component.Tools" />
+  <xs:complexType name="ReportEntityBase">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/GMF.Component.Tools" base="q1:EntityBaseOflong">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsDelete" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UpdateTime" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportEntityBase" nillable="true" type="tns:ReportEntityBase" />
+</xs:schema>

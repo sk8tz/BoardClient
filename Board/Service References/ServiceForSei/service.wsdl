@@ -1,0 +1,728 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceForSEI" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_ISEISevice_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <msf:Streamed xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+        </msf:Streamed>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SEIService.Business.Dto" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SEIService.Model" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/AdMaster.Common" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GMF.Component.Tools" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/AdMaster.CommonModel.XmlD_S.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISEISevice_GetAllSocialRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSocialRules" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetAllSocialRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSocialRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetAllCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetAllCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetTempList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTempList" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetTempList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTempListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetRulesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRulesList" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetRulesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRulesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetIndicatorsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndicatorsList" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetIndicatorsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndicatorsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetIndicatorsInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndicatorsInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetIndicatorsInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndicatorsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetParamsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParamsList" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetParamsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParamsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetParamsInfoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParamsInfoById" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetParamsInfoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParamsInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetParamsConfigInfoBySID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParamsConfigInfoBySID" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetParamsConfigInfoBySID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParamsConfigInfoBySIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_ParamsConfigInfoSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:ParamsConfigInfoSave" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_ParamsConfigInfoSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ParamsConfigInfoSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetColumnsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetColumnsList" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetColumnsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetColumnsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetColumnsById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetColumnsById" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetColumnsById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetColumnsByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_DeleteTempInfoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTempInfoById" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_DeleteTempInfoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTempInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_DeleteSocialRulesById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSocialRulesById" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_DeleteSocialRulesById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSocialRulesByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_CheckTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTable" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_CheckTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_TemplateSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:TemplateSave" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_TemplateSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TemplateSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_ParamsSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:ParamsSave" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_ParamsSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ParamsSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_SocialRulesSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:SocialRulesSave" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_SocialRulesSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SocialRulesSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_SelectAllByTableName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllByTableName" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_SelectAllByTableName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllByTableNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_SelectFourByDimensionTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFourByDimensionTable" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_SelectFourByDimensionTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFourByDimensionTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_SelectProgramNameAndDateByTableName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProgramNameAndDateByTableName" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_SelectProgramNameAndDateByTableName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProgramNameAndDateByTableNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_SelectProgramNameAndDateAndSearchDataByTableName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProgramNameAndDateAndSearchDataByTableName" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_SelectProgramNameAndDateAndSearchDataByTableName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProgramNameAndDateAndSearchDataByTableNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_CalCulate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalCulate" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_CalCulate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalCulateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_DataPreview_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataPreview" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_DataPreview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataPreviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_BaoTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:BaoTest" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_BaoTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BaoTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetSocialIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocialIndex" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetSocialIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocialIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetSocialLinkageIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocialLinkageIndex" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetSocialLinkageIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocialLinkageIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetSocialHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocialHistory" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetSocialHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocialHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetSearchIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchIndex" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetSearchIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_ComprehensiveCalculate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ComprehensiveCalculate" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_ComprehensiveCalculate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ComprehensiveCalculateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_SpecimenSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:SpecimenSave" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_SpecimenSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SpecimenSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetSpecimenInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecimenInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetSpecimenInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecimenInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_ProgramInfoSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProgramInfoSave" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_ProgramInfoSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProgramInfoSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetProgramInfoBySID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgramInfoBySID" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetProgramInfoBySID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgramInfoBySIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_TaRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:TaRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_TaRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TaRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetTaDataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaDataSet" />
+  </wsdl:message>
+  <wsdl:message name="ISEISevice_GetTaDataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaDataSetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISEISevice">
+    <wsdl:operation name="GetAllSocialRules">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetAllSocialRules" message="tns:ISEISevice_GetAllSocialRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetAllSocialRulesResponse" message="tns:ISEISevice_GetAllSocialRules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetAllCategory" message="tns:ISEISevice_GetAllCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetAllCategoryResponse" message="tns:ISEISevice_GetAllCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTempList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetTempList" message="tns:ISEISevice_GetTempList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetTempListResponse" message="tns:ISEISevice_GetTempList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRulesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetRulesList" message="tns:ISEISevice_GetRulesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetRulesListResponse" message="tns:ISEISevice_GetRulesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndicatorsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetIndicatorsList" message="tns:ISEISevice_GetIndicatorsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetIndicatorsListResponse" message="tns:ISEISevice_GetIndicatorsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndicatorsInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetIndicatorsInfo" message="tns:ISEISevice_GetIndicatorsInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetIndicatorsInfoResponse" message="tns:ISEISevice_GetIndicatorsInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParamsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetParamsList" message="tns:ISEISevice_GetParamsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetParamsListResponse" message="tns:ISEISevice_GetParamsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParamsInfoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetParamsInfoById" message="tns:ISEISevice_GetParamsInfoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetParamsInfoByIdResponse" message="tns:ISEISevice_GetParamsInfoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParamsConfigInfoBySID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetParamsConfigInfoBySID" message="tns:ISEISevice_GetParamsConfigInfoBySID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetParamsConfigInfoBySIDResponse" message="tns:ISEISevice_GetParamsConfigInfoBySID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ParamsConfigInfoSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/ParamsConfigInfoSave" message="tns:ISEISevice_ParamsConfigInfoSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/ParamsConfigInfoSaveResponse" message="tns:ISEISevice_ParamsConfigInfoSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetColumnsList" message="tns:ISEISevice_GetColumnsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetColumnsListResponse" message="tns:ISEISevice_GetColumnsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnsById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetColumnsById" message="tns:ISEISevice_GetColumnsById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetColumnsByIdResponse" message="tns:ISEISevice_GetColumnsById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTempInfoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/DeleteTempInfoById" message="tns:ISEISevice_DeleteTempInfoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/DeleteTempInfoByIdResponse" message="tns:ISEISevice_DeleteTempInfoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSocialRulesById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/DeleteSocialRulesById" message="tns:ISEISevice_DeleteSocialRulesById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/DeleteSocialRulesByIdResponse" message="tns:ISEISevice_DeleteSocialRulesById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/CheckTable" message="tns:ISEISevice_CheckTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/CheckTableResponse" message="tns:ISEISevice_CheckTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TemplateSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/TemplateSave" message="tns:ISEISevice_TemplateSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/TemplateSaveResponse" message="tns:ISEISevice_TemplateSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ParamsSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/ParamsSave" message="tns:ISEISevice_ParamsSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/ParamsSaveResponse" message="tns:ISEISevice_ParamsSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SocialRulesSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/SocialRulesSave" message="tns:ISEISevice_SocialRulesSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/SocialRulesSaveResponse" message="tns:ISEISevice_SocialRulesSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllByTableName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/SelectAllByTableName" message="tns:ISEISevice_SelectAllByTableName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/SelectAllByTableNameResponse" message="tns:ISEISevice_SelectAllByTableName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectFourByDimensionTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/SelectFourByDimensionTable" message="tns:ISEISevice_SelectFourByDimensionTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/SelectFourByDimensionTableResponse" message="tns:ISEISevice_SelectFourByDimensionTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectProgramNameAndDateByTableName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/SelectProgramNameAndDateByTableName" message="tns:ISEISevice_SelectProgramNameAndDateByTableName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/SelectProgramNameAndDateByTableNameResponse" message="tns:ISEISevice_SelectProgramNameAndDateByTableName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectProgramNameAndDateAndSearchDataByTableName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/SelectProgramNameAndDateAndSearchDataByTableName" message="tns:ISEISevice_SelectProgramNameAndDateAndSearchDataByTableName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/SelectProgramNameAndDateAndSearchDataByTableNameResponse" message="tns:ISEISevice_SelectProgramNameAndDateAndSearchDataByTableName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalCulate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/CalCulate" message="tns:ISEISevice_CalCulate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/CalCulateResponse" message="tns:ISEISevice_CalCulate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataPreview">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/DataPreview" message="tns:ISEISevice_DataPreview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/DataPreviewResponse" message="tns:ISEISevice_DataPreview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BaoTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/BaoTest" message="tns:ISEISevice_BaoTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/BaoTestResponse" message="tns:ISEISevice_BaoTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSocialIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetSocialIndex" message="tns:ISEISevice_GetSocialIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetSocialIndexResponse" message="tns:ISEISevice_GetSocialIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSocialLinkageIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetSocialLinkageIndex" message="tns:ISEISevice_GetSocialLinkageIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetSocialLinkageIndexResponse" message="tns:ISEISevice_GetSocialLinkageIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSocialHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetSocialHistory" message="tns:ISEISevice_GetSocialHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetSocialHistoryResponse" message="tns:ISEISevice_GetSocialHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetSearchIndex" message="tns:ISEISevice_GetSearchIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetSearchIndexResponse" message="tns:ISEISevice_GetSearchIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ComprehensiveCalculate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/ComprehensiveCalculate" message="tns:ISEISevice_ComprehensiveCalculate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/ComprehensiveCalculateResponse" message="tns:ISEISevice_ComprehensiveCalculate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SpecimenSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/SpecimenSave" message="tns:ISEISevice_SpecimenSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/SpecimenSaveResponse" message="tns:ISEISevice_SpecimenSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecimenInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetSpecimenInfo" message="tns:ISEISevice_GetSpecimenInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetSpecimenInfoResponse" message="tns:ISEISevice_GetSpecimenInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProgramInfoSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/ProgramInfoSave" message="tns:ISEISevice_ProgramInfoSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/ProgramInfoSaveResponse" message="tns:ISEISevice_ProgramInfoSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInfoBySID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetProgramInfoBySID" message="tns:ISEISevice_GetProgramInfoBySID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetProgramInfoBySIDResponse" message="tns:ISEISevice_GetProgramInfoBySID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TaRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/TaRequest" message="tns:ISEISevice_TaRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/TaRequestResponse" message="tns:ISEISevice_TaRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaDataSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISEISevice/GetTaDataSet" message="tns:ISEISevice_GetTaDataSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISEISevice/GetTaDataSetResponse" message="tns:ISEISevice_GetTaDataSet_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_ISEISevice" type="tns:ISEISevice">
+    <wsp:PolicyReference URI="#NetTcpBinding_ISEISevice_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetAllSocialRules">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetAllSocialRules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategory">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetAllCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTempList">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetTempList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRulesList">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetRulesList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndicatorsList">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetIndicatorsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndicatorsInfo">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetIndicatorsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParamsList">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetParamsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParamsInfoById">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetParamsInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParamsConfigInfoBySID">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetParamsConfigInfoBySID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParamsConfigInfoSave">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/ParamsConfigInfoSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnsList">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetColumnsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnsById">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetColumnsById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTempInfoById">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/DeleteTempInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSocialRulesById">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/DeleteSocialRulesById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTable">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/CheckTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TemplateSave">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/TemplateSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParamsSave">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/ParamsSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SocialRulesSave">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/SocialRulesSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllByTableName">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/SelectAllByTableName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFourByDimensionTable">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/SelectFourByDimensionTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectProgramNameAndDateByTableName">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/SelectProgramNameAndDateByTableName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectProgramNameAndDateAndSearchDataByTableName">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/SelectProgramNameAndDateAndSearchDataByTableName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalCulate">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/CalCulate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataPreview">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/DataPreview" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BaoTest">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/BaoTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSocialIndex">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetSocialIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSocialLinkageIndex">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetSocialLinkageIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSocialHistory">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetSocialHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchIndex">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetSearchIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComprehensiveCalculate">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/ComprehensiveCalculate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpecimenSave">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/SpecimenSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecimenInfo">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetSpecimenInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProgramInfoSave">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/ProgramInfoSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInfoBySID">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetProgramInfoBySID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaRequest">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/TaRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaDataSet">
+      <soap12:operation soapAction="http://tempuri.org/ISEISevice/GetTaDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceForSEI">
+    <wsdl:port name="NetTcpBinding_ISEISevice" binding="tns:NetTcpBinding_ISEISevice">
+      <soap12:address location="net.tcp://localhost:8733/ServiceForSEI/PlatformService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8733/ServiceForSEI/PlatformService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

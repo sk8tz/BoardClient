@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SEIService.Business.Dto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SEIService.Business.Dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/AdMaster.CommonModel.XmlD_S.Model" />
+  <xs:complexType name="ArrayOfSocialRulesDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SocialRulesDto" nillable="true" type="tns:SocialRulesDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSocialRulesDto" nillable="true" type="tns:ArrayOfSocialRulesDto" />
+  <xs:complexType name="SocialRulesDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Algorithm" type="xs:long" />
+      <xs:element minOccurs="0" name="BroadcastTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatesSection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirsTimeThisSeason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Installments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsChecked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrganizationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrganizationValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProgrameName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeamName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeamValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThemesName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThemesValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SocialRulesDto" nillable="true" type="tns:SocialRulesDto" />
+  <xs:complexType name="ArrayOfCategoryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CategoryInfo" nillable="true" type="tns:CategoryInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategoryInfo" nillable="true" type="tns:ArrayOfCategoryInfo" />
+  <xs:complexType name="CategoryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Caption" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryInfo" nillable="true" type="tns:CategoryInfo" />
+  <xs:complexType name="ArrayOfTempInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TempInfoDto" nillable="true" type="tns:TempInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTempInfoDto" nillable="true" type="tns:ArrayOfTempInfoDto" />
+  <xs:complexType name="TempInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Caption" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TempInfoDto" nillable="true" type="tns:TempInfoDto" />
+  <xs:complexType name="ArrayOfRulesInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RulesInfoDto" nillable="true" type="tns:RulesInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRulesInfoDto" nillable="true" type="tns:ArrayOfRulesInfoDto" />
+  <xs:complexType name="RulesInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="RuleDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RuleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RulesInfoDto" nillable="true" type="tns:RulesInfoDto" />
+  <xs:complexType name="ArrayOfCommonDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommonDto" nillable="true" type="tns:CommonDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommonDto" nillable="true" type="tns:ArrayOfCommonDto" />
+  <xs:complexType name="CommonDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Caption" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChildDto" nillable="true" type="tns:ArrayOfCommonDto" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonDto" nillable="true" type="tns:CommonDto" />
+  <xs:complexType name="ArrayOfParamsInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParamsInfoDto" nillable="true" type="tns:ParamsInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParamsInfoDto" nillable="true" type="tns:ArrayOfParamsInfoDto" />
+  <xs:complexType name="ParamsInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BindingName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Condition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="IID" type="xs:long" />
+      <xs:element minOccurs="0" name="ParamName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RID" type="xs:long" />
+      <xs:element minOccurs="0" name="SID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParamsInfoDto" nillable="true" type="tns:ParamsInfoDto" />
+  <xs:complexType name="ArrayOfProgramInfoModelDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProgramInfoModelDto" nillable="true" type="tns:ProgramInfoModelDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProgramInfoModelDto" nillable="true" type="tns:ArrayOfProgramInfoModelDto" />
+  <xs:complexType name="ProgramInfoModelDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BroadcastDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Period" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PeriodCollection" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="PeriodTimeValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProgramInfoModelDto" nillable="true" type="tns:ProgramInfoModelDto" />
+  <xs:complexType name="TaConfigDto">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AdMaster.CommonModel.XmlD_S.Model" minOccurs="0" name="ParamModel" nillable="true" type="q2:SpecimenModel" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Programs" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TimeString" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaConfigDto" nillable="true" type="tns:TaConfigDto" />
+</xs:schema>

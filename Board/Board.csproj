@@ -1,0 +1,629 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE2C00FA-5AD1-4A7E-900F-60A43891C588}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Board</RootNamespace>
+    <AssemblyName>Board</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>12.0.51020.0</ExpressionBlendVersion>
+    <NuGetPackageImportStamp>4dd43963</NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;Release</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.WPF.4, Version=4.0.20143.434, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL" />
+    <Reference Include="C1.WPF.C1Chart.4, Version=4.0.20143.434, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL" />
+    <Reference Include="C1.WPF.C1Chart.Extended.4, Version=4.0.20151.455, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ComponentOne2014v3\C1.WPF.C1Chart.Extended.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.WPF.DateTimeEditors.4, Version=4.0.20143.434, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL" />
+    <Reference Include="C1.WPF.Excel.4, Version=4.0.20143.434, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL" />
+    <Reference Include="C1.WPF.FlexGrid.4, Version=4.0.20143.434, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL" />
+    <Reference Include="C1.WPF.FlexGridFilter.4, Version=4.0.20143.434, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL" />
+    <Reference Include="C1.WPF.Gauge.4, Version=4.0.20143.434, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL" />
+    <Reference Include="C1.WPF.Maps.4, Version=4.0.20143.434, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL" />
+    <Reference Include="Caliburn.Micro">
+      <HintPath>..\packages\Caliburn.Micro.Core.2.0.1\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform">
+      <HintPath>..\packages\Caliburn.Micro.2.0.1\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\packages\MahApps.Metro.1.0.0.0\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyChanged">
+      <HintPath>..\packages\PropertyChanged.Fody.1.48.8\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\PropertyChanged.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.0.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.0.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AppBootstrapper.cs" />
+    <Compile Include="Common\ChartExtensions.cs" />
+    <Compile Include="Common\ExcelExport\ExcelCellStyle.cs" />
+    <Compile Include="Common\ExcelExport\ExcelFilter.cs" />
+    <Compile Include="Common\ExcelExport\ExcelRow.cs" />
+    <Compile Include="Common\FlexGridExtensions.cs" />
+    <Compile Include="Common\IBaseSystemViewModel.cs" />
+    <Compile Include="Common\LogHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ShowMessage.cs" />
+    <Compile Include="Common\FlexGridCellFactory.cs" />
+    <Compile Include="Common\TaskTimer.cs" />
+    <Compile Include="Common\WidgetTemplateSelector.cs" />
+    <Compile Include="Common\PasswordBoxBindingHelper.cs" />
+    <Compile Include="Common\ResizeThumb.cs" />
+    <Compile Include="Common\UIElementEx.cs" />
+    <Compile Include="Controls\AdaptivePanel.cs" />
+    <Compile Include="Controls\MultiSelectComboBox.xaml.cs">
+      <DependentUpon>MultiSelectComboBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NotifyWindow.xaml.cs">
+      <DependentUpon>NotifyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TrendTicker.xaml.cs">
+      <DependentUpon>TrendTicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WidgetListView.cs" />
+    <Compile Include="Converters\TypeToNameConverter.cs" />
+    <Compile Include="Converters\ValueConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\ChartTypeConverter.cs" />
+    <Compile Include="Converters\UserTypeToVisibilityConverter.cs" />
+    <Compile Include="Enums\BenchmarkTypeEnum.cs" />
+    <Compile Include="Enums\DateTypeEnum.cs" />
+    <Compile Include="Enums\LogLevelEnum.cs" />
+    <Compile Include="Enums\SystemTypeEnum.cs" />
+    <Compile Include="Models\System\BenchmarkType.cs" />
+    <Compile Include="Models\Control\CheckBoxNode.cs" />
+    <Compile Include="Models\SiteRealtime\HeadBodyInfo.cs" />
+    <Compile Include="Models\SiteRealtime\IInteractionData.cs" />
+    <Compile Include="Models\SiteRealtime\InteractionInfo.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeAdsData.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeCampaign.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeCityData.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeDetailData.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeEventData.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeInteractionHourData.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeInteractionDetailData.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeInteractionEventData.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeInteractionSummaryData.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeKeywordData.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeOrganicData.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimePageData.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeProvinceData.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeSourceData.cs" />
+    <Compile Include="Models\SiteRealtime\SiteRealtimeSummaryData.cs" />
+    <Compile Include="Models\System\ClientModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\System\DataCabinModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\System\DataTypeModel.cs" />
+    <Compile Include="Models\System\DateTypeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\System\DimensionTypeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\System\DisplayTypeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Control\HeaderKeyValue.cs" />
+    <Compile Include="Models\System\ISystemData.cs" />
+    <Compile Include="Models\System\MetricTypeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\System\OriginalDataModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\System\ProgramModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\System\RegionTypeModel.cs" />
+    <Compile Include="Models\System\ResultValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\System\SystemTypeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\System\TimeDimensionTypeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\System\UserModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\System\WidgetModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\TrackAnalysisReport\SiteInfo.cs" />
+    <Compile Include="Models\TrackAnalysisReport\TrackAnalysisData.cs" />
+    <Compile Include="Models\TrackAnalysisReport\TrackAnalysisInfo.cs" />
+    <Compile Include="Models\TrackRealtime\TrackRealtimeCampaign.cs" />
+    <Compile Include="Models\TrackRealtime\TrackRealtimeData.cs" />
+    <Compile Include="Resources\ApiResources\BenchmarkResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BenchmarkResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ApiResources\SiteRealtimeResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteRealtimeResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ApiResources\SponsorResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SponsorResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ApiResources\TrackAnalysisReportResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrackAnalysisReportResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ApiResources\TrackRealtimeResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrackRealtimeResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceForSei\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Benchmark\BenchmarkService.cs" />
+    <Compile Include="Services\SiteRealtime\InteractionDataRequest.cs" />
+    <Compile Include="Services\SiteRealtime\SiteRealtimeRequest.cs" />
+    <Compile Include="Services\SiteRealtime\SiteRealtimeService.cs" />
+    <Compile Include="Services\System\WidgetService.cs" />
+    <Compile Include="Services\TargetAudience\DataTableConverter.cs" />
+    <Compile Include="Services\TargetAudience\TargetAudienceInfo.cs" />
+    <Compile Include="Services\TargetAudience\TargetAudienceService.cs" />
+    <Compile Include="Services\TrackAnalysisReport\TrackAnalysisCompaignRequest.cs" />
+    <Compile Include="Services\TrackAnalysisReport\TrackAnalysisExtensionRequest.cs" />
+    <Compile Include="Services\TrackAnalysisReport\TrackAnalysisRequest.cs" />
+    <Compile Include="Services\TrackRealtime\TrackRealtimeCampaignRequest.cs" />
+    <Compile Include="Services\TrackRealtime\TrackRealtimeExtensionRequest.cs" />
+    <Compile Include="Services\TrackRealtime\TrackRealtimeService.cs" />
+    <Compile Include="SystemData\Base\BaseSystemData.cs" />
+    <Compile Include="Enums\CabinTypeEnum.cs" />
+    <Compile Include="Enums\ChartTypeEnum.cs" />
+    <Compile Include="Enums\GaugeTypeEnum.cs" />
+    <Compile Include="Enums\ReturnStatusEnum.cs" />
+    <Compile Include="Enums\SelectedTypeEnum.cs" />
+    <Compile Include="Models\SiteAnalysisReport\SiteData.cs" />
+    <Compile Include="Models\SiteAnalysisReport\SiteDatasource.cs" />
+    <Compile Include="Models\Sponsor\SponsorData.cs" />
+    <Compile Include="Models\Control\C1Data.cs" />
+    <Compile Include="Models\Control\ChartItemInfo.cs" />
+    <Compile Include="Models\Control\CheckBoxTab.cs" />
+    <Compile Include="Models\Control\ColumnConfig.cs" />
+    <Compile Include="Models\Control\DataOrderItem.cs" />
+    <Compile Include="Models\Control\GaugeItemInfo.cs" />
+    <Compile Include="Models\Control\GridItemInfo.cs" />
+    <Compile Include="Models\Control\IWidgetInfo.cs" />
+    <Compile Include="Models\Control\IItemTypeModel.cs" />
+    <Compile Include="Models\Control\MapItemInfo.cs" />
+    <Compile Include="Models\Control\MyReport.cs" />
+    <Compile Include="Models\TrackAnalysisReport\CampaignModel.cs" />
+    <Compile Include="Models\Users\User.cs" />
+    <Compile Include="Models\Users\UserInfo.cs" />
+    <Compile Include="Models\Users\UserToken.cs" />
+    <Compile Include="Resources\ApiResources\SystemResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\MessageResources\MessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\System\LoginService.cs" />
+    <Compile Include="Services\System\MainService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\Sponsor\SponsorService.cs" />
+    <Compile Include="Services\TrackAnalysisReport\TrackService.cs" />
+    <Compile Include="SystemData\Benchmark\BenchmarkDataService.cs" />
+    <Compile Include="SystemData\SiteAnalysisReport\SiteAnalysisReportDataService.cs" />
+    <Compile Include="SystemData\SiteRealtime\SiteRealtimeDataService.cs" />
+    <Compile Include="SystemData\SiteRealtime\SiteRealtimeType.cs" />
+    <Compile Include="SystemData\Sponsor\SponsorDataService.cs" />
+    <Compile Include="SystemData\Base\SystemDataBuilder.cs" />
+    <Compile Include="SystemData\System\SystemDataService.cs" />
+    <Compile Include="SystemData\TrackAnalysisReport\TrackAnalysisReportExtension.cs" />
+    <Compile Include="SystemData\TrackAnalysisReport\TrackAnalysisReportDataService.cs" />
+    <Compile Include="SystemData\TrackRealtime\TrackRealtimeDataService.cs" />
+    <Compile Include="ViewModels\BenchmarkViewModel.cs" />
+    <Compile Include="ViewModels\IShell.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\SettingViewModel.cs" />
+    <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\SiteRealtimeViewModel.cs" />
+    <Compile Include="ViewModels\SponsorViewModel.cs" />
+    <Compile Include="ViewModels\Widget2ViewModel.cs" />
+    <Compile Include="ViewModels\TrackAnalysisReportViewModel.cs" />
+    <Compile Include="ViewModels\TrackRealtimeViewModel.cs" />
+    <Compile Include="ViewModels\WidgetViewModel.cs" />
+    <Page Include="Controls\MultiSelectComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\NotifyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TrendTicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\StyleResources\LoginResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\StyleResources\MainResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BenchmarkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\StyleResources\WidgetResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SiteRealtimeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SponsorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Widget2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TrackAnalysisReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TrackRealtimeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WidgetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ApiResources\BenchmarkResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BenchmarkResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ApiResources\SystemResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SystemResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ApiResources\SiteRealtimeResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SiteRealtimeResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ApiResources\SponsorResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SponsorResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ApiResources\TrackAnalysisReportResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TrackAnalysisReportResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ApiResources\TrackRealtimeResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TrackRealtimeResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MessageResources\MessageResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <BlendEmbeddedFont Include="Fonts\msyh.ttc">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+      <Uppercase>True</Uppercase>
+      <Lowercase>True</Lowercase>
+      <Numbers>True</Numbers>
+      <Punctuation>True</Punctuation>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\msyhbd.ttc">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+      <Uppercase>True</Uppercase>
+      <Lowercase>True</Lowercase>
+      <Numbers>True</Numbers>
+      <Punctuation>True</Punctuation>
+    </BlendEmbeddedFont>
+    <None Include="Service References\ServiceForSei\AdMaster.Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceForSei\AdMaster.CommonModel.XmlD_S.Model.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceForSei\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceForSei\Board.ServiceForSei.ArrayOfKeyValueOfstringdoubleKeyValueOfstringdouble.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForSei\Board.ServiceForSei.CategoryInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForSei\Board.ServiceForSei.CommonDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForSei\Board.ServiceForSei.E_TaStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForSei\Board.ServiceForSei.IndicatorsInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForSei\Board.ServiceForSei.ParamsConfigInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForSei\Board.ServiceForSei.ParamsInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForSei\Board.ServiceForSei.ParamsInfoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForSei\Board.ServiceForSei.ProgramInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForSei\Board.ServiceForSei.RulesInfoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForSei\Board.ServiceForSei.SocialRulesDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForSei\Board.ServiceForSei.SpecimenInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForSei\Board.ServiceForSei.TempInfoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForSei\GMF.Component.Tools.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceForSei\SEIService.Business.Dto.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceForSei\SEIService.Model.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceForSei\service.wsdl" />
+    <None Include="Service References\ServiceForSei\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceForSei\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceForSei\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceForSei\System.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Board-smalllogo.png" />
+    <Resource Include="Icons\Board_biglogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\icon_B.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Benchmark\" />
+    <Folder Include="Models\SiteDataBank\" />
+    <Folder Include="Models\TrankDataBank\" />
+    <Folder Include="Services\SiteAnalysisReport\" />
+    <Folder Include="Services\SiteDataBank\" />
+    <Folder Include="Services\TrackDataBank\" />
+    <Folder Include="SystemData\SiteDataBank\" />
+    <Folder Include="SystemData\TrackDataBank\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceForSei\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceForSei\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceForSei\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceForSei\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.1.26.4\build\Fody.targets" Condition="Exists('..\packages\Fody.1.26.4\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。启用“NuGet 程序包还原”可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.1.26.4\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.26.4\build\Fody.targets'))" />
+  </Target>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
